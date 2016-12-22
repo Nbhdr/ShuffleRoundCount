@@ -229,7 +229,7 @@ void PrintDeck(const struct deckOfCards *pDeck)
         printf("empty\r\n");
     }
     while(temp != NULL){
-        printf("card face: %u\r\n", temp->face);
+        printf("card face: %lu\r\n", temp->face);
         temp = temp->next;
     }
     
