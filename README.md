@@ -26,22 +26,39 @@ Sample output:
 $Coding Challenge Neel$ gcc -o out  ShuffleRoundCount.c 
 
 $Coding Challenge Neel$ ./out 
+
 Expecting only one parameter 
+
 $Coding Challenge Neel$ ./out 0 
+
 Empty Deck 
+
 $Coding Challenge Neel$ ./out -99 
+
 Card count must be a postive integer 
+
 $Coding Challenge Neel$ ./out 1.0 
+
 Card count must be a postive integer 
+
 $Coding Challenge Neel$ ./out 1 
+
 Card Count: 1  Round Count: 1   
+
 $Coding Challenge Neel$ ./out 13 
+
 Card Count: 13  Round Count: 12   
+
 $Coding Challenge Neel$ ./out 31 
+
 Card Count: 31  Round Count: 210   
+
 $Coding Challenge Neel$ ./out 82 
+
 Card Count: 82  Round Count: 55440   
+
 $Coding Challenge Neel$ ./out 200 
+
 Card Count: 200  Round Count: 8460   
 
 
