@@ -90,16 +90,16 @@ static struct card* GetTopCard(struct deckOfCards *pDeck)
  Function to check if the original deck order has been reached or not
  @params:
  -  *pDeck is a pointer to the deck to get top card from
- -  int cardCount is the number of cards in the deck
+ -  unsigned long int cardCount is the number of cards in the deck
  output:
- -  int
+ -  int true/false
  *********************************************************************************/
 
-static int CheckDeckOrder(const struct deckOfCards *pDeck, int cardCount)
+static int CheckDeckOrder(const struct deckOfCards *pDeck, unsigned long int cardCount)
 {
     // loop through cards and compare values to int i
     struct card *temp = pDeck->pTopCard;
-    int i = 1;
+    unsigned long int i = 1;
     while(temp != NULL){
         if(temp->face != i){    // found an out of place card
             return 0;
@@ -107,15 +107,16 @@ static int CheckDeckOrder(const struct deckOfCards *pDeck, int cardCount)
         i++;
         temp = temp->next;
     }
-    
-    return 1;
+    return (cardCount == (i-1)) && 1;     // make sure we have correct# of cards in addition to order
+                                          // (i-1) promoted to unsigned long
+
 }
 
 
 /********************************************************************************
  Function to allocate memory and initialize for a new card
  @params:
- -  unsigned int face value to initialize card to
+ -  unsigned long int face value to initialize card to
  output:
  -  pointer to newly allocated card
  *********************************************************************************/
@@ -136,7 +137,7 @@ static struct card *InitializeCard(unsigned long int face)
 /********************************************************************************
  Function to allocate memory and initialize for a new deck
  @params:
- -  unsigned int cardCount represents how many cards in the deck
+ -  unsigned long int cardCount represents how many cards in the deck
  output:
  -  pointer to newly allocated card
  *********************************************************************************/
@@ -222,7 +223,6 @@ static void FreeDeckMemory(struct deckOfCards **ppDeckHand, struct deckOfCards *
 
 void PrintDeck(const struct deckOfCards *pDeck)
 {
-    int i = 0;
     struct card* temp;
     temp = pDeck->pTopCard;
     if(temp == NULL){

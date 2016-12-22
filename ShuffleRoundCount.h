@@ -16,7 +16,7 @@
 
 // card structure where face value, representing both its face value and original position
 struct card{
-    unsigned int face;
+    unsigned long int face;
     struct card *next;           // represent card order as a linked list
     
 };
@@ -30,7 +30,7 @@ struct deckOfCards {
 
 static void AddCardToDeck(struct deckOfCards *pDeck, struct card* pCard, int top);
 static struct card* GetTopCard(struct deckOfCards *pDeck);
-static int CheckDeckOrder(const struct deckOfCards *pDeck, int cardCount);
+static int CheckDeckOrder(const struct deckOfCards *pDeck, unsigned long int cardCount);
 static struct card *InitializeCard(unsigned long int face);
 static struct deckOfCards *InitializeDeck(unsigned long int cardCount);
 static void FreeDeckMemory(struct deckOfCards **ppDeckHand, struct deckOfCards **ppDeckTable);
