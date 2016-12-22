@@ -16,21 +16,6 @@
 
 
 
-// card structure where face value, representing both its face value and original position
-struct card{
-    unsigned int face;
-    struct card *next;           // represent card order as a linked list
-    
-};
-
-// deck structure, only required to insert to the beginning and end of deck
-struct deckOfCards {
-    struct card *pTopCard;
-    struct card *pBottomCard;
-};
-
-
-
 /********************************************************************************
  Function to add a card to the top or bottom of a deck of cards.
  @params:
