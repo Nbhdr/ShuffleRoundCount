@@ -21,6 +21,10 @@ The deck in the left hand represents a geometric series where the factor is 1/2,
 the deck completely. Check the deck order also requires n passes.
 This straightforward algorithm requires O(R * n) time where R is the round count and n is the card count.
 
+
+
+compiled using gcc 4.2.1
+
 Sample output:
 
 $Coding Challenge Neel$ gcc -o out  ShuffleRoundCount.c 
